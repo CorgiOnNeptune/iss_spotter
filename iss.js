@@ -35,7 +35,7 @@ const fetchCoordsByIP = (ip, callback) => {
     
     if (response.statusCode !== 200) {
       const msg = `Status code ${response.statusCode} when fetching coordinates: ${body}`;
-      return callback(err, null);
+      return callback(Error(msg), null);
     }
 
     const parsedBody = JSON.parse(body);
